@@ -1,0 +1,39 @@
+.article-excerpt {
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    color: black;
+}
+
+.item-meta {
+    font-size: 13px;
+    color: #9E9E9E;
+}
+
+.title-meta {
+    font-size: 30px;
+    color: black;
+}
+
+.fr {
+    float: right;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+    z-index: 2;
+}
+
+.title {
+    text-align: center;
+    background-color: white;
+}
+
+.title-info {
+    /*border-bottom: 1px #efefef solid;*/
+    text-align: center;
+    font-size: 14px;
+}
