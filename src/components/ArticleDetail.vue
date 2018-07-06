@@ -1,11 +1,22 @@
 <template>
     <div class="content">
-        <h1 class="title">{{article.title}}</h1>
-        <router-link  v-if="is_me" class="btn btn-success" :to="{name:'ArticleEdit',params:{id:article.id}}">编辑文章
+        <button class="btn btn-default" onclick="window.history.go(-1)" title="返回">返回</button>
+        <router-link  v-if="is_me" class="btn btn-default" :to="{name:'ArticleEdit',params:{id:article.id}}">编辑文章
         </router-link>
-        <button  v-if="is_me" class="btn btn-success" v-on:click="deleteArticle()">删除文章</button>
-        <div class="title-info">
-            {{article.published_at+' /分类：'+(article.category?article.category:'default')}}
+        <button  v-if="is_me" class="btn btn-default" v-on:click="deleteArticle()">删除文章</button>
+        <div class="detail-title">{{article.title}}</div>
+        <div class="post-meta">
+            <span class="post-time">
+                <span class="post-meta-item-icon">
+                    <i class="fa fa-calendar-o mr5"></i>发表于 {{article.published_at}}
+                </span>
+            </span>
+            <span class="post-category">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                    <i class="fa fa-folder-o mr5"></i>分类于 {{article.category?article.category:'default'}}
+                </span>
+            </span>
         </div>
         <hr>
         <div v-html="article.content" v-highlight class="markdown-body"></div>
@@ -51,5 +62,22 @@
 </script>
 
 <style scoped>
-
+    .title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .post-meta {
+        color: #999;
+        font-size: 12px;
+        text-align: center;
+    }
+    .post-meta-divider {
+        margin: 0 .5em;
+    }
+    .detail-title {
+        margin: 15px 0;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 500;
+    }
 </style>
