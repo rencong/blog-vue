@@ -96,7 +96,7 @@
     }
 
     .page-bar li:first-child > a {
-        margin-left: 0px
+        margin-left: 0;
     }
 
     .page-bar a {
@@ -107,8 +107,8 @@
         padding: 6px 12px;
         margin-left: -1px;
         line-height: 1.42857143;
-        color: #337ab7;
-        cursor: pointer
+        color: #555;
+        cursor: pointer;
     }
 
     .page-bar a:hover {
@@ -120,16 +120,16 @@
     }
 
     .page-bar .active a {
-        color: #fff;
+        color: #000;
         cursor: default;
-        background-color: #337ab7;
-        border-color: #337ab7;
+        background-color: #e6e6e6;
+        border-color: #e6e6e6;
     }
 
     .page-bar i {
         font-style: normal;
         color: #d44950;
-        margin: 0px 4px;
-        font-size: 12px;
+        margin: 0 4px;
+        font-size: 16px;
     }
 </style>

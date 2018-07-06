@@ -1,5 +1,43 @@
+/*原子类样式*/
+.mr5{
+    margin-right: 5px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.fr {
+    float: right;
+}
+.tc {
+    text-align: center;
+}
+.tr {
+    text-align: right;
+}
+.f16 {
+    font-size: 16px;
+}
+.f20 {
+    font-size: 20px;
+}
+
+/*手势*/
+.cp {
+    cursor: pointer;
+}
+
+/*伪类清除浮动*/
+.clearfix:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
 .article-excerpt {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -15,12 +53,8 @@
 }
 
 .title-meta {
-    font-size: 30px;
+    font-size: 18px;
     color: black;
-}
-
-.fr {
-    float: right;
 }
 
 .navbar-fixed-bottom, .navbar-fixed-top {
@@ -36,4 +70,48 @@
     /*border-bottom: 1px #efefef solid;*/
     text-align: center;
     font-size: 14px;
+}
+
+
+/*文章公共样式*/
+.post-type {
+    display: flex;
+    align-items: center;
+    background-color: #ececec;
+    padding: 5px 8px;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+.post-list {
+    padding: 20px;
+    color: #555;
+}
+.post-title {
+    text-align: center;
+    word-break: break-word;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.post-title .post-title-link {
+    display: inline-block;
+    vertical-align: top;
+    color: #555;
+    font-size: 22px;
+}
+.post-meta {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0 20px;
+}
+.post-meta-item-icon {
+    margin-right: 3px;
+}
+.post-meta-divider {
+    margin: 0 .5em;
+}
+.post-button {
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #e5e5e5;
 }

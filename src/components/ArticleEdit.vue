@@ -21,7 +21,7 @@
             <label>Published_at</label>
             <input type="date" class="form-control" v-model="params.published_at">
         </div>
-        <button class="btn btn-primary form-control" v-on:click="saveArticle()">发表文章</button>
+        <button class="btn btn-primary btn-block" v-on:click="saveArticle()">发表文章</button>
     </div>
 </template>
 
@@ -151,5 +151,11 @@
 </script>
 
 <style scoped>
-
+    h1 {
+        font-size: 18px;
+        margin: 10px 0 15px;
+    }
+    .form-group > label {
+        margin-bottom: 5px;
+    }
 </style>

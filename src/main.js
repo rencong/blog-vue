@@ -6,6 +6,7 @@ import router from './router'
 import store from './store'
 import './permission'
 import './bower_components/github-markdown-css/github-markdown.css'
+import './assets/css/reset.css'
 import './assets/css/common.css'
 
 
