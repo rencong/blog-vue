@@ -1,7 +1,8 @@
 import {getName, getToken, setName, setToken} from '../../utils/auth'
 import {getUserInfo, login, register} from '../../api/login'
-
+let isUserInfoFetch =false
 const user = {
+    // namespaced: true,
     state: {
         name: '',
         token: '',
@@ -65,20 +66,40 @@ const user = {
                 resolve();
             })
         },
-        GetUserInfo({commit}) {
+        GetUserInfo({commit, state}) {
             return new Promise((resolve, reject) => {
-                getUserInfo().then(response => {
-                    const data = response.data;
-                    commit('SET_NAME', getName());
-                    commit('SET_TOKEN', getToken());
-                    commit('SET_ID', data);
-                    resolve(response)
-                }).catch(error => {
-                    reject(error)
-                })
+                if(state.id === ""&&!isUserInfoFetch) {
+                    console.log(userInfoPromise)
+                    userInfoPromise = fetchUserInfo()
+                    userInfoPromise.then(response => {
+                        const data = response.data;
+                        commit('SET_NAME', getName());
+                        commit('SET_TOKEN', getToken());
+                        commit('SET_ID', data);
+                        resolve(response.data)
+                    }).catch(error => {
+                        reject(error)
+                    })
+                }else{
+                    userInfoPromise.then((response)=>{
+                        resolve(response.data)
+                    })
+                }
             })
         },
     }
 };
+function fetchUserInfo(){
+    return  new Promise((resolve,reject)=>{
+        isUserInfoFetch = true
+        getUserInfo().then(response => {
+            isUserInfoFetch = false
+            resolve(response)
+        }).catch(error => {
+            reject(error)
+        })
+    })
+}
+let userInfoPromise;
 export default user
 

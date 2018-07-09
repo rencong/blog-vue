@@ -10,7 +10,7 @@
     export default {
         name: 'App',
         created() {
-            this.$store.dispatch('GetUserInfo').then(() => {
+            this.$store.dispatch('GetUserInfo').then((data) => {
             }).catch(error => {
                 alert(error);
             });
