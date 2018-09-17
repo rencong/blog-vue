@@ -1,8 +1,8 @@
 <template>
     <div>
         <div style="text-align: center">
-            <img style="width: 80px;height: 80px"
-                 src="https://lvwenhan.com/content/templates/HappyCodding/images/logo.png">
+            <img src="https://lorempixel.com/256/256/?15135" class="img-circle" alt="64x64"
+                 style="width: 64px;height: 64px">
         </div>
         <div class="post-all">
             <div class="post-type clearfix">
@@ -19,6 +19,8 @@
                             {{article.title}}
                         </router-link>
                     </div>
+                    <div class="article-excerpt markdown-body">{{article.content}}</div>
+
                     <div class="post-meta">
                         <span class="post-time">
                             <span class="post-meta-item-icon">
@@ -41,16 +43,16 @@
                              <span class="post-meta-item-text">作者 {{article.user===null?'null':article.user.name}}</span>
                         </span>
                     </div>
-                    <div class="article-excerpt markdown-body">{{article.content}}</div>
-                    <div class="post-button tc">
-                        <router-link :to="{name:'ArticleDetail',params:{id:article.id}}">
-                            <button class="btn btn-default">阅读全文 »</button>
-                        </router-link>
-                    </div>
+                    <hr>
+                    <!--<div class="post-button tc">-->
+                    <!--<router-link :to="{name:'ArticleDetail',params:{id:article.id}}">-->
+                    <!--<button class="btn btn-default">阅读全文 »</button>-->
+                    <!--</router-link>-->
+                    <!--</div>-->
                     <!--<div class="item-meta row">-->
-                        <!--<label class="col-lg-3">发布时间：{{article.published_at}}</label>-->
-                        <!--<label class="col-lg-3">分类：{{article.category?article.category:'default'}}</label>-->
-                        <!--<label class="col-lg-3">作者：{{article.user===null?'null':article.user.name}}</label>-->
+                    <!--<label class="col-lg-3">发布时间：{{article.published_at}}</label>-->
+                    <!--<label class="col-lg-3">分类：{{article.category?article.category:'default'}}</label>-->
+                    <!--<label class="col-lg-3">作者：{{article.user===null?'null':article.user.name}}</label>-->
                     <!--</div>-->
                 </li>
             </ul>
@@ -113,13 +115,16 @@
         padding: 5px 8px;
         justify-content: space-between;
     }
+
     .post-type-title {
         flex: 1;
     }
+
     .post-search {
         display: flex;
         justify-content: flex-end;
     }
+
     .search-input {
         padding: 5px 8px;
         font-size: 14px;

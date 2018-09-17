@@ -99,7 +99,7 @@
                             name: 'title1',
                             action: function customFunction(editor) {
                                 var cm = editor.codemirror;
-                                this._toggleHeading(cm, "title", 1);
+                                that._toggleHeading(cm, "title", 1);
                             },
                             className: 'glyphicon glyphicon-align-left',
                             title: 'title1'
@@ -108,7 +108,7 @@
                             name: 'title2',
                             action: function customFunction(editor) {
                                 var cm = editor.codemirror;
-                                _toggleHeading(cm, "title", 2);
+                                that._toggleHeading(cm, "title", 2);
                             },
                             className: 'glyphicon glyphicon-align-left',
                             title: 'title2'

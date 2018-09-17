@@ -87,7 +87,7 @@
     color: #555;
 }
 .post-title {
-    text-align: center;
+    /*text-align: center;*/
     word-break: break-word;
     font-weight: 500;
     margin-bottom: 15px;
@@ -95,13 +95,14 @@
 .post-title .post-title-link {
     display: inline-block;
     vertical-align: top;
-    color: #555;
+    /*color: #555;*/
     font-size: 22px;
+    color: rgb(79,192,141);
 }
 .post-meta {
     color: #999;
     font-size: 12px;
-    text-align: center;
+    /*text-align: center;*/
     margin: 10px 0 20px;
 }
 .post-meta-item-icon {
