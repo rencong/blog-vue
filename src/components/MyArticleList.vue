@@ -66,14 +66,16 @@
             },
             getList() {
                 let that = this;
-                articleUserList({'user_id': that.$store.state.user.id}).then(response => {
-                    let result = response.data;
-                    that.articles = result.data;
-                    that.currentPage = result.current_page;
-                    that.lastPage = result.last_page;
-                }).catch(error => {
-                    alert(error);
-                });
+                this.$store.dispatch ('GetUserInfo').then((res)=> {
+                    articleUserList({'user_id': that.$store.state.user.id}).then(response => {
+                        let result = response.data;
+                        that.articles = result.data;
+                        that.currentPage = result.current_page;
+                        that.lastPage = result.last_page;
+                    }).catch(error => {
+                        alert(error);
+                    });
+                })
             }
         },
         components: {
