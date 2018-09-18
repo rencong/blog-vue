@@ -8,6 +8,7 @@ import './permission'
 import './bower_components/github-markdown-css/github-markdown.css'
 import './assets/css/reset.css'
 import './assets/css/common.css'
+import './assets/css/bootstrap.css'
 
 
 Vue.config.productionTip = false;

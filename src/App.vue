@@ -10,6 +10,7 @@
     export default {
         name: 'App',
         created() {
+            console.log(this)
             this.$store.dispatch('GetUserInfo').then((data) => {
             }).catch(error => {
                 alert(error);

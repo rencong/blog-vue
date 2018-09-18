@@ -68,8 +68,7 @@ const user = {
         },
         GetUserInfo({commit, state}) {
             return new Promise((resolve, reject) => {
-                if(state.id === ""&&!isUserInfoFetch) {
-                    console.log(userInfoPromise)
+                if (state.id === "" && !isUserInfoFetch) {
                     userInfoPromise = fetchUserInfo()
                     userInfoPromise.then(response => {
                         const data = response.data;
@@ -80,8 +79,8 @@ const user = {
                     }).catch(error => {
                         reject(error)
                     })
-                }else{
-                    userInfoPromise.then((response)=>{
+                } else {
+                    userInfoPromise.then((response) => {
                         resolve(response.data)
                     })
                 }
@@ -89,8 +88,9 @@ const user = {
         },
     }
 };
-function fetchUserInfo(){
-    return  new Promise((resolve,reject)=>{
+
+function fetchUserInfo() {
+    return new Promise((resolve, reject) => {
         isUserInfoFetch = true
         getUserInfo().then(response => {
             isUserInfoFetch = false
@@ -100,6 +100,7 @@ function fetchUserInfo(){
         })
     })
 }
+
 let userInfoPromise;
 export default user
 
