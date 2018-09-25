@@ -9,6 +9,8 @@ import './bower_components/github-markdown-css/github-markdown.css'
 import './assets/css/reset.css'
 import './assets/css/common.css'
 import './assets/css/bootstrap.css'
+import './assets/js/bootstrap'
+import './assets/js/jquery-3.2.1.min'
 
 
 Vue.config.productionTip = false;
