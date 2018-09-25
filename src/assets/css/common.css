@@ -116,3 +116,24 @@
     margin-bottom: 30px;
     border-bottom: 1px dashed #e5e5e5;
 }
+
+.media-conversation-meta {
+    float: right;
+}
+.media-conversation-replies {
+    font-size: 12px;
+    color: #A7B3C2;
+    margin-top: 2px;
+    display: block;
+}
+.media-conversation-replies a {
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    color: #4B4B4B;
+    font-size: 1.44em;
+    line-height: 1;
+    margin-bottom: -1px;
+}.media-body a{
+     color: #4b4b4b;
+ }

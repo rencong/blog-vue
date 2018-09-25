@@ -6,7 +6,7 @@ import {getToken} from "./utils/auth";
 const whiteList = ['/login', '/register']; // 不重定向白名单
 router.beforeEach((to, from, next) => {
     NProgress.start();
-    if (getToken()) {
+    if (getToken() && getToken() != 'undefined' && getToken() != 'null' && getToken() != '') {
         if (to.path === '/login') {
             next({path: '/home'});
             NProgress.done()

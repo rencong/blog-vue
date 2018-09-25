@@ -1,8 +1,8 @@
 import request from '../utils/request'
 
-export function login(username, password) {
+export function login(email, password) {
     const data = {
-        username,
+        email,
         password
     };
     return request({
@@ -12,9 +12,9 @@ export function login(username, password) {
     })
 }
 
-export function register(username, password,email) {
+export function register(name, password,email) {
     const data = {
-        username,
+        name,
         password,
         email
     };

@@ -10,10 +10,11 @@
     export default {
         name: 'App',
         created() {
-            console.log(this)
+            //todo:如何保存用户信息，登录时会报错,token暴露在外面
             this.$store.dispatch('GetUserInfo').then((data) => {
             }).catch(error => {
-                alert(error);
+                console.log(error);
+                // alert(error);
             });
         }
     }

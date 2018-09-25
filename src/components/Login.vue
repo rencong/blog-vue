@@ -5,8 +5,8 @@
             <div v-show="showLogin">
                 <h3 class="login">登录</h3>
                 <div class="form-group">
-                    <label>姓名：</label>
-                    <input class="form-control" type="text" v-model="loginForm.name">
+                    <label>邮箱：</label>
+                    <input class="form-control" type="email" v-model="loginForm.email">
                 </div>
                 <div class="form-group">
                     <label>密码：</label>
@@ -22,15 +22,15 @@
                 <h3 class="login">注册</h3>
                 <div class="form-group">
                     <label>姓名：</label>
-                    <input class="form-control" type="text" v-model="loginForm.name">
+                    <input class="form-control" type="text" v-model="registerForm.name">
                 </div>
                 <div class="form-group">
                     <label>邮箱：</label>
-                    <input class="form-control" type="email" v-model="loginForm.email">
+                    <input class="form-control" type="email" v-model="registerForm.email">
                 </div>
                 <div class="form-group">
                     <label>密码：</label>
-                    <input class="form-control" type="password" v-model="loginForm.password" @keyup.enter="login">
+                    <input class="form-control" type="password" v-model="registerForm.password" @keyup.enter="login">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary form-control" @click="register">注册</button>
@@ -53,7 +53,7 @@
                 showLogin: true,
                 showRegister: false,
                 loginForm: {
-                    name: '',
+                    email: '',
                     password: ''
                 },
                 registerForm: {
@@ -66,7 +66,7 @@
         methods: {
             ToLogin: function () {
                 this.loginForm = {
-                    name: '',
+                    email: '',
                     password: ''
                 };
                 this.showLogin = true;
@@ -82,8 +82,8 @@
                 this.showRegister = true;
             },
             login: function () {
-                if (this.loginForm.name === "" || this.loginForm.password === "") {
-                    alert("请输入用户名或密码")
+                if (this.loginForm.email === "" || this.loginForm.password === "") {
+                    alert("请输入邮箱或密码")
                 } else {
                     this.$store.dispatch('Login', this.loginForm).then(() => {
                         this.$router.push('/home')

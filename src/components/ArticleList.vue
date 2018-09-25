@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div style="text-align: center">
-            <img src="https://lorempixel.com/256/256/?15135" class="img-circle" alt="64x64"
-                 style="width: 64px;height: 64px">
-        </div>
+        <!--<div style="text-align: center">-->
+            <!--<img src="https://lorempixel.com/256/256/?15135" class="img-circle" alt="64x64"-->
+                 <!--style="width: 64px;height: 64px">-->
+        <!--</div>-->
         <div class="post-all">
             <div class="post-type clearfix">
                 <div class="post-type-title">所有文章</div>
@@ -18,6 +18,11 @@
                         <router-link :to="{name:'ArticleDetail',params:{id:article.id}}" class="post-title-link">
                             {{article.title}}
                         </router-link>
+                        <div class="media-conversation-meta">
+                                <span class="media-conversation-replies">
+                                    <a href="#">{{article.comments.length}}</a>回复
+                                </span>
+                        </div>
                     </div>
                     <div class="article-excerpt markdown-body">{{article.content}}</div>
 

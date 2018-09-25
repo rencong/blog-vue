@@ -16,7 +16,7 @@
             <li v-if="currentPage === lastPage">
                 <a class="banclick">下一页</a>
             </li>
-            <li><a>共<i>{{lastPage}}</i>页</a></li>
+            <li><a class="banclick">共 {{lastPage}} 页</a></li>
         </ul>
     </div>
 </template>

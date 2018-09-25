@@ -1,12 +1,13 @@
 import {getName, getToken, setName, setToken} from '../../utils/auth'
 import {getUserInfo, login, register} from '../../api/login'
-let isUserInfoFetch =false
+let isUserInfoFetch = false
 const user = {
     // namespaced: true,
     state: {
         name: '',
         token: '',
-        id: ''
+        id: '',
+        user:{}
     },
 
     mutations: {
@@ -19,17 +20,22 @@ const user = {
         SET_ID: (state, id) => {
             state.id = id;
         },
+        SET_USER: (state, user) => {
+            state.user = user;
+        },
     },
     actions: {
         // 登录
         Login({commit}, userInfo) {
-            const name = userInfo.name.trim();
+            const email = userInfo.email.trim();
             const password = userInfo.password.trim();
             return new Promise((resolve, reject) => {
-                login(name, password).then(response => {
+                login(email, password).then(response => {
                     const data = response.data;
                     commit('SET_NAME', data.name);
                     commit('SET_TOKEN', data.api_token);
+                    commit('SET_ID', data.id);
+                    commit('SET_USER',data);
                     setName(data.name);
                     setToken(data.api_token);
                     resolve(response);
@@ -48,6 +54,8 @@ const user = {
                     const data = response.data;
                     commit('SET_NAME', data.name);
                     commit('SET_TOKEN', data.api_token);
+                    commit('SET_ID', data.id);
+                    commit('SET_USER',data);
                     setName(data.name);
                     setToken(data.api_token);
                     resolve(response);
@@ -58,6 +66,7 @@ const user = {
         },
         // 登出
         LogOut({commit}) {
+            //todo:后端是否要注销
             return new Promise(resolve => {
                 commit('SET_NAME', '');
                 commit('SET_TOKEN', '');
@@ -74,7 +83,8 @@ const user = {
                         const data = response.data;
                         commit('SET_NAME', getName());
                         commit('SET_TOKEN', getToken());
-                        commit('SET_ID', data);
+                        commit('SET_ID', data.id);
+                        commit('SET_USER',data);
                         resolve(response.data)
                     }).catch(error => {
                         reject(error)
