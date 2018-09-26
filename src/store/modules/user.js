@@ -1,5 +1,5 @@
 import {getName, getToken, setName, setToken} from '../../utils/auth'
-import {getUserInfo, login, register} from '../../api/login'
+import {getUserInfo, login, register} from '../../api/user'
 let isUserInfoFetch = false
 const user = {
     // namespaced: true,

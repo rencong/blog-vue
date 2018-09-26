@@ -17,8 +17,12 @@
                         <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                            class="dropdown-toggle">{{user.name}}</a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="#"><i class="fa fa-cog"></i> 更换密码</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> 更换头像</a></li>
+                            <li>
+                                <!--<router-link :to="{name:'AvatarUpdate'}"><i class="fa fa-cog"></i> 更换密码</router-link>-->
+                            </li>
+                            <!--<li>-->
+                                <router-link :to="{name:'AvatarUpdate'}"><i class="fa fa-user"></i> 更换头像</router-link>
+                            <!--</li>-->
                             <li role="separator" class="divider"></li>
                             <li><a v-on:click="logout()"><i class="fa fa-sign-out"></i>注销</a></li>
                         </ul>
@@ -27,8 +31,10 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" v-else>
-                    <router-link v-show="!is_login" class="navbar-brand cp" :to="{name:'Login'}"><i class="fa fa-sign-in"></i>登录</router-link>
-                    <router-link v-show="!is_login" class="navbar-brand cp" :to="{name:'Register'}"><i class="fa fa-sign-in"></i>注册</router-link>
+                    <router-link class="navbar-brand cp" :to="{name:'Login'}"><i class="fa fa-sign-in"></i>登录
+                    </router-link>
+                    <router-link class="navbar-brand cp" :to="{name:'Register'}"><i class="fa fa-sign-in"></i>注册
+                    </router-link>
                 </ul>
             </div>
         </div>

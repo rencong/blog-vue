@@ -12,7 +12,7 @@ export function login(email, password) {
     })
 }
 
-export function register(name, password,email) {
+export function register(name, password, email) {
     const data = {
         name,
         password,
@@ -39,3 +39,13 @@ export function getUserInfo() {
     })
 }
 
+export function avatarUpdate(dataUrl) {
+    const data = {
+        dataUrl
+    };
+    return request({
+        url: '/user/avatar',
+        method: 'post',
+        data
+    })
+}

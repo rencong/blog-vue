@@ -6,6 +6,7 @@ import ArticleList from '@/components/ArticleList'
 import BasicLayout from '@/layouts/BasicLayout'
 import MyArticleList from '@/components/MyArticleList'
 import ArticleDetail from '@/components/ArticleDetail'
+import AvatarUpdate from '@/components/Avatar'
 import ArticleEdit from '@/components/ArticleEdit'
 import Login from '@/components/Login'
 
@@ -30,6 +31,13 @@ export default new Router({
                         {path: 'my', name: 'MyArticleList', component: MyArticleList},
                         {path: ':id', name: 'ArticleDetail', component: ArticleDetail},
                         {path: '', redirect: {name: 'ArticleList'}}
+                    ]
+                },
+                {
+                    path: 'user/',
+                    component: BasicLayout,
+                    children: [
+                        {path: 'avatar', name: 'AvatarUpdate', component: AvatarUpdate},
                     ]
                 },
                 {path: 'home', redirect: {name: 'ArticleList'}},
